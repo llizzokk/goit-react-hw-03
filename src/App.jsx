@@ -9,7 +9,7 @@ function App() {
   const [contact, setContact] = useState(() => {
     const savedData = JSON.parse(localStorage.getItem("phonebook"));
 
-    return savedData.length > 0
+    return savedData && Array.isArray(savedData) && savedData.length > 0
       ? savedData
       : [
           { id: "id-1", name: "Rosie Simpson", number: "459-12-56" },
